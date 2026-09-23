@@ -4,133 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VoyageAventure - Destinations</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
-            <h1 class="logo">🌍 VoyageAventure</h1>
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li><a href="destinations.html" class="nav-link active">Destinations</a></li>
-                    <li><a href="apropos.html" class="nav-link">À propos</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">🌍 VoyageAventure</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Afficher le menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
+                        <li class="nav-item"><a href="destinations.html" class="nav-link active" aria-current="page">Destinations</a></li>
+                        <li class="nav-item"><a href="apropos.html" class="nav-link">À propos</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <section class="page-header">
+    <section class="bg-primary text-white text-center py-5">
         <div class="container">
-            <h1 class="page-title">Nos destinations</h1>
-            <p class="page-subtitle">Explorez les merveilles du monde</p>
+            <h1 class="display-5 fw-bold">Nos destinations</h1>
+            <p class="lead mb-0">Explorez les merveilles du monde</p>
         </div>
     </section>
 
-    <section class="destinations">
-        <div class="container">
-            <div class="filters">
-                <h3>Filtrer par continent</h3>
-                <div class="filter-buttons">
-                    <button class="filter-btn active">Tous</button>
-                    <button class="filter-btn">Europe</button>
-                    <button class="filter-btn">Asie</button>
-                    <button class="filter-btn">Amérique</button>
-                    <button class="filter-btn">Afrique</button>
+    <main class="container py-5">
+        <div class="text-center mb-5">
+            <h2>Filtrer par continent</h2>
+            <div class="d-flex flex-wrap justify-content-center gap-2 mt-3" role="group" aria-label="Filtres par continent">
+                <button class="btn btn-primary filter-btn" data-filter="tous" type="button">Tous</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="europe" type="button">Europe</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="asie" type="button">Asie</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="amerique" type="button">Amérique</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="afrique" type="button">Afrique</button>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col destination-card" data-continent="europe">
+                <div class="card h-100 shadow-sm">
+                    <div class="bg-light text-center display-3 p-4">🏰</div>
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title h4">Paris, France</h3>
+                        <p class="card-text">La ville lumière vous attend</p>
+                        <div class="mt-auto mb-3">
+                            <span class="badge text-bg-secondary">7 jours</span>
+                            <span class="badge text-bg-danger">À partir de 599€</span>
+                        </div>
+                        <button class="btn btn-primary details-btn" data-bs-toggle="modal" data-bs-target="#destinationModal" data-destination="Paris, France" data-description="La ville lumière vous attend" type="button">Voir détails</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="destinations-grid">
-                <div class="destination-card" data-continent="europe">
-                    <div class="destination-image">🏰</div>
-                    <div class="destination-content">
-                        <h3 class="destination-title">Paris, France</h3>
-                        <p class="destination-description">La ville lumière vous attend</p>
-                        <div class="destination-details">
-                            <span class="duration">7 jours</span>
-                            <span class="price">À partir de 599€</span>
+            <div class="col destination-card" data-continent="asie">
+                <div class="card h-100 shadow-sm">
+                    <div class="bg-light text-center display-3 p-4">🏯</div>
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title h4">Tokyo, Japon</h3>
+                        <p class="card-text">Tradition et modernité</p>
+                        <div class="mt-auto mb-3">
+                            <span class="badge text-bg-secondary">10 jours</span>
+                            <span class="badge text-bg-danger">À partir de 1299€</span>
                         </div>
-                        <button class="destination-btn">Voir détails</button>
+                        <button class="btn btn-primary details-btn" data-bs-toggle="modal" data-bs-target="#destinationModal" data-destination="Tokyo, Japon" data-description="Tradition et modernité" type="button">Voir détails</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="destination-card" data-continent="asie">
-                    <div class="destination-image">🏯</div>
-                    <div class="destination-content">
-                        <h3 class="destination-title">Tokyo, Japon</h3>
-                        <p class="destination-description">Tradition et modernité</p>
-                        <div class="destination-details">
-                            <span class="duration">10 jours</span>
-                            <span class="price">À partir de 1299€</span>
+            <div class="col destination-card" data-continent="amerique">
+                <div class="card h-100 shadow-sm">
+                    <div class="bg-light text-center display-3 p-4">🗽</div>
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title h4">New York, USA</h3>
+                        <p class="card-text">La ville qui ne dort jamais</p>
+                        <div class="mt-auto mb-3">
+                            <span class="badge text-bg-secondary">5 jours</span>
+                            <span class="badge text-bg-danger">À partir de 899€</span>
                         </div>
-                        <button class="destination-btn">Voir détails</button>
+                        <button class="btn btn-primary details-btn" data-bs-toggle="modal" data-bs-target="#destinationModal" data-destination="New York, USA" data-description="La ville qui ne dort jamais" type="button">Voir détails</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="destination-card" data-continent="amerique">
-                    <div class="destination-image">🗽</div>
-                    <div class="destination-content">
-                        <h3 class="destination-title">New York, USA</h3>
-                        <p class="destination-description">La ville qui ne dort jamais</p>
-                        <div class="destination-details">
-                            <span class="duration">5 jours</span>
-                            <span class="price">À partir de 899€</span>
+            <div class="col destination-card" data-continent="afrique">
+                <div class="card h-100 shadow-sm">
+                    <div class="bg-light text-center display-3 p-4">🦁</div>
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title h4">Safari Kenya</h3>
+                        <p class="card-text">Au cœur de la savane</p>
+                        <div class="mt-auto mb-3">
+                            <span class="badge text-bg-secondary">12 jours</span>
+                            <span class="badge text-bg-danger">À partir de 1899€</span>
                         </div>
-                        <button class="destination-btn">Voir détails</button>
+                        <button class="btn btn-primary details-btn" data-bs-toggle="modal" data-bs-target="#destinationModal" data-destination="Safari Kenya" data-description="Au cœur de la savane" type="button">Voir détails</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="destination-card" data-continent="afrique">
-                    <div class="destination-image">🦁</div>
-                    <div class="destination-content">
-                        <h3 class="destination-title">Safari Kenya</h3>
-                        <p class="destination-description">Au cœur de la savane</p>
-                        <div class="destination-details">
-                            <span class="duration">12 jours</span>
-                            <span class="price">À partir de 1899€</span>
+            <div class="col destination-card" data-continent="europe">
+                <div class="card h-100 shadow-sm">
+                    <div class="bg-light text-center display-3 p-4">🏛️</div>
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title h4">Rome, Italie</h3>
+                        <p class="card-text">La ville éternelle</p>
+                        <div class="mt-auto mb-3">
+                            <span class="badge text-bg-secondary">6 jours</span>
+                            <span class="badge text-bg-danger">À partir de 499€</span>
                         </div>
-                        <button class="destination-btn">Voir détails</button>
+                        <button class="btn btn-primary details-btn" data-bs-toggle="modal" data-bs-target="#destinationModal" data-destination="Rome, Italie" data-description="La ville éternelle" type="button">Voir détails</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="destination-card" data-continent="europe">
-                    <div class="destination-image">🏛️</div>
-                    <div class="destination-content">
-                        <h3 class="destination-title">Rome, Italie</h3>
-                        <p class="destination-description">La ville éternelle</p>
-                        <div class="destination-details">
-                            <span class="duration">6 jours</span>
-                            <span class="price">À partir de 499€</span>
+            <div class="col destination-card" data-continent="asie">
+                <div class="card h-100 shadow-sm">
+                    <div class="bg-light text-center display-3 p-4">🕌</div>
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title h4">Bali, Indonésie</h3>
+                        <p class="card-text">Paradis tropical</p>
+                        <div class="mt-auto mb-3">
+                            <span class="badge text-bg-secondary">14 jours</span>
+                            <span class="badge text-bg-danger">À partir de 999€</span>
                         </div>
-                        <button class="destination-btn">Voir détails</button>
-                    </div>
-                </div>
-
-                <div class="destination-card" data-continent="asie">
-                    <div class="destination-image">🕌</div>
-                    <div class="destination-content">
-                        <h3 class="destination-title">Bali, Indonésie</h3>
-                        <p class="destination-description">Paradis tropical</p>
-                        <div class="destination-details">
-                            <span class="duration">14 jours</span>
-                            <span class="price">À partir de 999€</span>
-                        </div>
-                        <button class="destination-btn">Voir détails</button>
+                        <button class="btn btn-primary details-btn" data-bs-toggle="modal" data-bs-target="#destinationModal" data-destination="Bali, Indonésie" data-description="Paradis tropical" type="button">Voir détails</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <footer class="site-footer">
+    <div class="modal fade" id="destinationModal" tabindex="-1" aria-labelledby="destinationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="destinationModalLabel">Détails de la destination</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <h3 class="h5" id="modalDestination"></h3>
+                    <p id="modalDescription" class="mb-0"></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
+            <div class="row">
+                <div class="col-md-6">
                     <h3>VoyageAventure</h3>
                     <p>Votre partenaire voyage depuis 2015</p>
                 </div>
-                <div class="footer-section">
+                <div class="col-md-6">
                     <h3>Contact</h3>
                     <p>📧 info@voyageaventure.fr</p>
                     <p>📞 01 23 45 67 89</p>
@@ -138,5 +171,33 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const destinationCards = document.querySelectorAll('.destination-card');
+
+        filterButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+
+                filterButtons.forEach((item) => {
+                    item.classList.toggle('btn-primary', item === button);
+                    item.classList.toggle('btn-outline-primary', item !== button);
+                });
+
+                destinationCards.forEach((card) => {
+                    card.classList.toggle('d-none', filter !== 'tous' && card.dataset.continent !== filter);
+                });
+            });
+        });
+
+        document.querySelectorAll('.details-btn').forEach((button) => {
+            button.addEventListener('click', () => {
+                document.querySelector('#modalDestination').textContent = button.dataset.destination;
+                document.querySelector('#modalDescription').textContent = button.dataset.description;
+            });
+        });
+    </script>
 </body>
 </html>

@@ -25,12 +25,13 @@ body {
     border-radius: 4px;
 }
 
-.hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+:root {
+    --degrade-violet: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+.hero,
 .page-header {
-    background-color: #34495e;
+    background: var(--degrade-violet);
     color: white;
 }
 
